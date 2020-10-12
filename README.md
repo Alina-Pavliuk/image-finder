@@ -1,1 +1,1 @@
-# image-finder
+# initial-repository

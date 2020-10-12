@@ -1,0 +1,56 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgb(247, 209, 185);
+}
+
+
+.gallery {
+  flex-wrap: wrap;
+  display: flex;
+list-style: none;
+  margin: 20px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: 230px;
+}
+
+.gallery > .photo-card {
+  margin: 15px;
+  width: calc((100% - 120px) / 4);
+}
+.stats-item {
+  margin: 0;
+  padding-top: 10px;
+}
+
+.stats {
+  color: rgb(41, 13, 2);
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.search-form {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.loadMore-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  border: 3px solid brown;
+  background-color: rgb(245, 157, 125);
+}
