@@ -1,6 +1,6 @@
 {{#each this}}
 <div class="photo-card item">
-  <img width="{{webformatWidth}}" height="{{webformatHeight}}" src="{{webformatURL}}" alt="{{tags}}" data-src="{{largeImageURL}}" data-index="{{@index}}" />
+  <img class="photo-card__img" width="{{webformatWidth}}" height="{{webformatHeight}}" src="{{webformatURL}}" alt="{{tags}}" data-src="{{largeImageURL}}" data-index="{{@index}}" />
 
   <div class="stats">
     <p class="stats-item">
@@ -22,10 +22,3 @@
   </div>
 </div>
 {{/each}}
-
-{{!-- webformatURL - ссылка на маленькое изображение для списка карточек
-largeImageURL - ссылка на большое изображение (смотри пункт 'дополнительно')
-likes - количество лайков
-views - количество просмотров
-comments - количество комментариев
-downloads - количество загрузок --}}

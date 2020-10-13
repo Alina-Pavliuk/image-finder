@@ -13,7 +13,7 @@ const loadMoreBtn = document.createElement('button');
 
 function loadMore() {
   apiService.setPage();
-  apiService.fetchImages().then(({hits}) => renderImages(hits));
+  apiService.fetchImages().then((data) => renderImages(data));
   setTimeout(() => {
 
     window.scrollTo({
@@ -24,6 +24,7 @@ function loadMore() {
 };
 
 refs.galleryList.addEventListener('click', (e) => {
+  // console.dir(e.target.dataset);
   let modeRsc;
   
   if(e.target.nodeName  === 'IMG') {
@@ -38,21 +39,23 @@ refs.galleryList.addEventListener('click', (e) => {
   }
 })
 
-refs.input.addEventListener('input', 
+refs.form.addEventListener('input', 
   debounce(event => {
   event.preventDefault();
-  refs.galleryList.innerHtml = '';
+  refs.galleryList.innerHTML = '';
   apiService.query = event.target.value;
   renderApi();
   refs.input.value = '';
-  }, 500),
+
+  }, 1000),
   
 )
 
 loadMoreBtn.addEventListener('click', loadMore);
 
 function renderApi() {
-  apiService.fetchImages().then(({hits}) => renderImages(hits))
+  apiService.fetchImages().then((data) => {
+    renderImages(data)})
 };
 
 function renderImages (data) {
